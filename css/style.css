@@ -1,0 +1,191 @@
+:root {
+  --color-main-background: hsl(233, 47%, 7%);
+  --color-card-background: hsl(244, 38%, 16%);
+  --color-accent: hsl(277, 64%, 61%);
+  --color-main-heading-stats: hsl(0, 0%, 100%);
+  --color-main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --color-stat-headings: hsla(0, 0%, 100%, 0.6);
+
+  --font-family-one: "Lexend Deca", sans-serif;
+  --font-family-tow: "Inter", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: var(--color-main-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.card {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-card-background);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 100px 0;
+}
+
+img {
+  width: 100%;
+}
+
+.card__heading {
+  color: var(--color-main-heading-stats);
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+.card__content {
+  padding: 30px;
+  text-align: center;
+}
+
+.card__heading span {
+  color: var(--color-accent);
+}
+
+.card__discription--style {
+  color: hwb(0 100% 0% / 0.5);
+  font-size: 13px;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.card__discription {
+  margin-top: 13px;
+}
+
+.card__name {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+.card__footer {
+  text-align: center;
+}
+
+.card__item {
+  margin-bottom: 20px;
+}
+
+.card__head {
+  color: var(--color-main-heading-stats);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+  }
+
+  .card__content {
+    padding: 0 60px 0 35px;
+  }
+  .card__img,
+  .media {
+    flex: 1;
+  }
+
+  .card__img {
+    order: 2;
+  }
+
+  .card__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px 0 35px;
+    margin-top: 20px;
+  }
+
+  .card__item {
+    margin: 0;
+  }
+
+  .card__content {
+    text-align: left;
+  }
+
+  .card__heading {
+    font-size: 18px;
+  }
+
+  .card__discription--style {
+    font-size: 10px;
+  }
+
+  .card__head {
+    font-size: 15px;
+  }
+
+  .card__name {
+    font-size: 8px;
+  }
+}
